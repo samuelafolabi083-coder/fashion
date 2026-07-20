@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact Us - TM Fashion House</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, sans-serif;
+}
+
+body{
+    background:#f8f8f8;
+    color:#333;
+}
+
+header{
+    background:#000;
+    color:#fff;
+    text-align:center;
+    padding:30px;
+}
+
+.contact-container{
+    max-width:1100px;
+    margin:auto;
+    padding:50px 20px;
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+    gap:30px;
+}
+
+.contact-info,
+.contact-form{
+    background:#fff;
+    padding:30px;
+    border-radius:10px;
+    box-shadow:0 2px 10px rgba(0,0,0,0.1);
+}
+
+.contact-info h2,
+.contact-form h2{
+    margin-bottom:20px;
+}
+
+.contact-info p{
+    margin-bottom:15px;
+    line-height:1.7;
+}
+
+form input,
+form textarea{
+    width:100%;
+    padding:12px;
+    margin-bottom:15px;
+    border:1px solid #ccc;
+    border-radius:5px;
+}
+
+form textarea{
+    resize:none;
+    height:120px;
+}
+
+button{
+    background:#000;
+    color:#fff;
+    border:none;
+    padding:12px 25px;
+    cursor:pointer;
+    border-radius:5px;
+}
+
+button:hover{
+    opacity:0.9;
+}
+
+.whatsapp-btn{
+    display:inline-block;
+    margin-top:15px;
+    background:#25D366;
+    color:#fff;
+    text-decoration:none;
+    padding:12px 20px;
+    border-radius:5px;
+}
+
+footer{
+    background:#000;
+    color:#fff;
+    text-align:center;
+    padding:20px;
+    margin-top:30px;
+}
+</style>
+</head>
+<body>
+
+<header>
+    <h1>Contact TM Fashion House</h1>
+</header>
+
+<section class="contact-container">
+
+    <div class="contact-info">
+        <h2>Get In Touch</h2>
+
+        <p><strong>Address:</strong><br>
+        23 Fashion Street, Lagos, Nigeria</p>
+
+        <p><strong>Phone:</strong><br>
+        +1(240) 791-8323</p>
+
+        <p><strong>Email:</strong><br>
+        info@TMfashion@gmai.com</p>
+
+        <p><strong>Business Hours:</strong><br>
+        Mon - Sat: 9:00 AM - 6:00 PM</p>
+
+        <a href="https://wa.me/+1(240)791-8323"
+           class="whatsapp-btn">
+           Chat on WhatsApp
+        </a>
+    </div>
+
+    <div class="contact-form">
+        <h2>Send Us a Message</h2>
+
+        <form>
+            <input type="text" placeholder="Your Name" required>
+
+            <input type="email" placeholder="Your Email" required>
+
+            <input type="text" placeholder="Subject" required>
+
+            <textarea placeholder="Your Message"></textarea>
+
+            <button type="submit">Send Message</button>
+        </form>
+    </div>
+
+</section>
+
+<footer>
+    <p>&copy; 2026 Elegance Fashion House. All Rights Reserved.</p>
+</footer>
+
+</body>
+</html>

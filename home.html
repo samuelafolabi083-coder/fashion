@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TM Fashion House</title>
+
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+            font-family:Arial, sans-serif;
+        }
+
+        body{
+            background:#f5f5f5;
+        }
+
+        header{
+            background:black;
+            color:white;
+            padding:20px 10%;
+            display:flex;
+            justify-content:space-between;
+            align-items:center;
+        }
+
+        nav a{
+            color:white;
+            text-decoration:none;
+            margin-left:20px;
+        }
+
+        .hero{
+            height:90vh;
+            background:linear-gradient(rgba(0,0,0,0.5),
+            rgba(0,0,0,0.5)),
+            url("images/1000465978.png");
+            background-size:cover;
+            background-position:center;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            text-align:center;
+            color:white;
+        }
+
+        .hero-content h1{
+            font-size:50px;
+            margin-bottom:15px;
+        }
+
+        .hero-content p{
+            font-size:18px;
+            margin-bottom:20px;
+        }
+
+        .btn{
+            background:white;
+            color:black;
+            padding:12px 25px;
+            text-decoration:none;
+            border-radius:5px;
+            font-weight:bold;
+        }
+
+        .products{
+            padding:60px 10%;
+            text-align:center;
+        }
+
+        .products h2{
+            margin-bottom:30px;
+        }
+
+        .gallery{
+            display:grid;
+            grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+            gap:20px;
+        }
+
+        .gallery img{
+            width:100%;
+            border-radius:10px;
+        }
+
+        footer{
+            background:black;
+            color:white;
+            text-align:center;
+            padding:20px;
+            margin-top:40px;
+        }
+        .btn :hover{
+            background-color: black;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h2>TM Fashion House</h2>
+
+    <nav>
+        <a href="./home.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+</header>
+
+<section class="hero">
+    <div class="hero-content">
+        <h1>Welcome to TM Fashion House</h1>
+        <p>Where Style Meets Elegance
+            <p>Elevating your wardrobe,  one outfit at a time</p>.
+            👗 Turkish wear for ladies
+            👔 Stylish men`s wear
+        </p>
+        <a href="./shop.html" class="btn">Shop Now</a>
+    </div>
+</section>
+
+<section class="products">
+    <h2>Featured Collections</h2>
+
+    <div class="gallery">
+        <img src="./img/1000466017.png" alt="Fashion Design">
+        <img src="./img/1000465981.png" alt="Fashion Design">
+        <img src="./img/1000466024.png" alt="Fashion Design">
+    </div>
+</section>
+
+<footer>
+    <p>&copy; 2026 TM Fashion House. All Rights Reserved.</p>
+</footer>
+
+</body>
+</html>
