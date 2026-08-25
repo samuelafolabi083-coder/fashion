@@ -1,240 +1,210 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>TM Fashion Shop</title>
-
-<style>
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:Arial, sans-serif;
-}
-
-body{
-    background-image:url("./img/c43660ab-0248-4a86-8bbc-b82530665571.png");
-}
-
-header{
-    background:#111;
-    color:brown;
-    padding:20px;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-}
-
-.cart{
-    background:#fff;
-    color:#111;
-    padding:10px 15px;
-    border-radius:5px;
-    font-weight:bold;
-}
-
-.products{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-    gap:20px;
-    padding:30px;
-}
-
-.product{
-    background:white;
-    border-radius:10px;
-    overflow:hidden;
-    box-shadow:0 2px 10px rgba(0,0,0,0.1);
-    text-align:center;
-    padding-bottom:20px;
-}
-
-.product img{
-    width:100%;
-    height:350px;
-    object-fit:cover;
-}
-
-.product h3{
-    margin:15px 0;
-}
-
-.price{
-    color:brown;
-    font-size:20px;
-    font-weight:bold;
-}
-
-button{
-    margin-top:15px;
-    padding:10px 20px;
-    border:none;
-    background:gray;
-    color:white;
-    border-radius:5px;
-    cursor:pointer;
-}
-
-button:hover{
-    background:black;
-}
-
-footer{
-    background:#111;
-    color:white;
-    text-align:center;
-    padding:20px;
-    margin-top:20px;
-}
-.con{
-    color:brown;
-}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ready-to-Wear Online Boutique - TM Fashion House</title>
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <!-- Luxury Styling -->
+    <link rel="stylesheet" href="css/styles.css">
 </head>
-
 <body>
 
-<header>
-    <h1>TM Fashion Shop</h1>
+    <!-- Announcement Bar -->
+    <aside class="announcement-bar">
+        <span>TM Fashion House Online Boutique — Swift Doorstep Courier Delivery</span>
+        <div class="bar-links">
+            <a href="https://wa.me/2348000000000" target="_blank"><i class="fa-brands fa-whatsapp"></i> WhatsApp Order Line</a>
+            <a href="javascript:void(0)" onclick="DesignerPortal.openPortal()"><i class="fa-solid fa-lock"></i> Atelier Hub</a>
+        </div>
+    </aside>
 
-    <div class="cart">
-        🛒 Cart: <span id="cart-count">0</span>
+    <!-- Header Navigation -->
+    <header class="site-header">
+        <div class="container nav-container">
+            <a href="index.html" class="brand-logo">
+                <span class="brand-title">TM Fashion House</span>
+                <span class="brand-subtitle">Haute Couture & Ready-to-Wear</span>
+            </a>
+
+            <nav>
+                <ul class="nav-menu">
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="shop.html" class="nav-link active">Ready-to-Wear</a></li>
+                    <li><a href="about.html" class="nav-link">The Designer</a></li>
+                    <li><a href="index.html#bespoke-section" class="nav-link">Bespoke Tailoring</a></li>
+                    <li><a href="index.html#lookbook-section" class="nav-link">Lookbook</a></li>
+                    <li><a href="contact.html" class="nav-link">Contact & Fittings</a></li>
+                </ul>
+            </nav>
+
+            <div class="nav-actions">
+                <button class="action-btn" onclick="MaisonApp.scrollToShop()" title="Wishlist">
+                    <i class="fa-regular fa-heart"></i>
+                    <span class="badge-count" id="wishlist-count-badge">0</span>
+                </button>
+                <button class="action-btn" onclick="MaisonApp.openCartDrawer()" title="Shopping Bag">
+                    <i class="fa-solid fa-bag-shopping"></i>
+                    <span class="badge-count" id="cart-count-badge">0</span>
+                </button>
+                <button class="btn btn-outline btn-sm" onclick="DesignerPortal.openPortal()">
+                    <i class="fa-solid fa-crown text-gold"></i> Designer Hub
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Shop Main Section -->
+    <section id="catalog-section" class="section" style="padding-top: 3rem;">
+        <div class="container">
+            <div class="section-header">
+                <span class="eyebrow">Online Ready-to-Wear Store</span>
+                <h1 class="section-title">Ready-to-Wear Wares</h1>
+                <p class="section-subtitle">
+                    Discover readily available men's luxury kaftans, executive senator suits, and elegant women's couture dresses.
+                </p>
+            </div>
+
+            <!-- Controls: Category Tabs, Search, Sorting -->
+            <div class="catalog-controls">
+                <div class="category-tabs">
+                    <button class="tab-btn active" data-category="all">All Wares</button>
+                    <button class="tab-btn" data-category="men">Men's Kaftans & Senators</button>
+                    <button class="tab-btn" data-category="women">Women's Gowns & Outfits</button>
+                </div>
+
+                <div class="filter-search-group">
+                    <div class="search-box">
+                        <i class="fa-solid fa-magnifying-glass search-icon"></i>
+                        <input type="text" id="search-input" class="search-input" placeholder="Search kaftans, silk, blue...">
+                    </div>
+                    <select id="sort-select" class="sort-select">
+                        <option value="featured">Featured Curations</option>
+                        <option value="price-low">Price: Low to High</option>
+                        <option value="price-high">Price: High to Low</option>
+                        <option value="rating">Highest Rated</option>
+                        <option value="newest">Newest Arrivals</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Dynamic Product Grid -->
+            <div id="products-grid" class="products-grid"></div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container text-center" style="text-align: center;">
+            <p>© 2026 TM Fashion House. All Rights Reserved. Creative Direction by Lead Designer.</p>
+        </div>
+    </footer>
+
+    <!-- Cart Drawer -->
+    <div id="drawer-backdrop" class="drawer-backdrop" onclick="MaisonApp.closeCartDrawer()"></div>
+    <aside id="cart-drawer" class="cart-drawer">
+        <div class="drawer-header">
+            <h3 class="drawer-title">Your Shopping Bag</h3>
+            <button class="drawer-close-btn" onclick="MaisonApp.closeCartDrawer()"><i class="fa-solid fa-xmark"></i></button>
+        </div>
+        <div id="cart-items-container" class="drawer-body"></div>
+        <div class="drawer-footer">
+            <div class="coupon-row">
+                <input type="text" id="coupon-input" class="coupon-input" placeholder="VIP Code (e.g. TMVIP10)">
+                <button class="btn btn-outline btn-sm" onclick="MaisonApp.applyPromoCode()">Apply</button>
+            </div>
+            <div class="cart-summary-row"><span>Subtotal</span><span id="cart-subtotal">₦0</span></div>
+            <div id="cart-discount-row" class="cart-summary-row" style="color: var(--c-gold); display: none;">
+                <span>VIP Discount</span><span>-₦0</span>
+            </div>
+            <div class="cart-summary-total"><span>Estimated Total</span><span id="cart-total">₦0</span></div>
+            <button class="btn btn-primary" style="width: 100%; margin-top: 1.25rem;" onclick="MaisonApp.openCheckoutModal()">
+                Proceed to Checkout <i class="fa-solid fa-lock" style="font-size: 0.75rem;"></i>
+            </button>
+        </div>
+    </aside>
+
+    <!-- Quick View Modal -->
+    <div id="quick-view-modal" class="modal-backdrop">
+        <div class="modal-container">
+            <button class="modal-close-btn" onclick="MaisonApp.closeModal('quick-view-modal')"><i class="fa-solid fa-xmark"></i></button>
+            <div id="quick-view-content"></div>
+        </div>
     </div>
-</header>
-<section class="products">
 
-    <div class="product">
-        <img src="./img/1000465980.png" alt="Brown Kaftan">
-        <h3>Brown Luxury </h3>
-        <p class="price"># 1</p>
-        <button onclick="addToCart()">Add to Cart</button>
+    <!-- Checkout Modal -->
+    <div id="checkout-modal" class="modal-backdrop">
+        <div class="modal-container" style="max-width: 820px; padding: 2.5rem;">
+            <button class="modal-close-btn" onclick="MaisonApp.closeModal('checkout-modal')"><i class="fa-solid fa-xmark"></i></button>
+            <div style="text-align: center; margin-bottom: 2rem;">
+                <span class="eyebrow">TM Fashion House Checkout</span>
+                <h2 style="font-family: var(--font-serif); font-size: 2rem;">Order Placement & Dispatch</h2>
+            </div>
+            <div style="display: grid; grid-template-columns: 1.15fr 1fr; gap: 2.5rem;">
+                <form onsubmit="MaisonApp.submitOrder(event)">
+                    <div class="form-grid" style="margin-bottom: 1.5rem;">
+                        <div class="form-group-full">
+                            <label class="form-label">Full Name</label>
+                            <input type="text" id="chk-name" class="form-control" placeholder="Your name" required>
+                        </div>
+                        <div class="form-group-full">
+                            <label class="form-label">Email Address</label>
+                            <input type="email" id="chk-email" class="form-control" placeholder="your@email.com" required>
+                        </div>
+                        <div class="form-group-full">
+                            <label class="form-label">Delivery Address</label>
+                            <input type="text" id="chk-address" class="form-control" placeholder="Delivery street, City, State" required>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary" style="width: 100%;">
+                        <i class="fa-solid fa-check"></i> Place & Confirm Order
+                    </button>
+                </form>
+                <div style="background: var(--c-cream); padding: 1.75rem; border: 1px solid var(--c-border); border-radius: var(--radius-xs);">
+                    <h4 style="font-family: var(--font-serif); font-size: 1.25rem; margin-bottom: 1.25rem;">Order Summary</h4>
+                    <div id="checkout-summary-items"></div>
+                </div>
+            </div>
+        </div>
     </div>
 
-    <div class="product">
-        <img src="./img/1000465979.png" alt="White Kaftan">
-        <h3> Peach Classic </h3>
-        <p class="price"># 2</p>
-        <button onclick="addToCart()">Add to Cart</button>
+    <!-- Order Success Modal -->
+    <div id="order-success-modal" class="modal-backdrop">
+        <div class="modal-container" style="max-width: 580px; padding: 3rem 2.5rem; text-align: center;">
+            <button class="modal-close-btn" onclick="MaisonApp.closeModal('order-success-modal')"><i class="fa-solid fa-xmark"></i></button>
+            <div style="width: 65px; height: 65px; border-radius: 50%; background: var(--c-gold-light); color: var(--c-gold-dark); display: flex; align-items: center; justify-content: center; font-size: 1.8rem; margin: 0 auto 1.5rem auto;">
+                <i class="fa-solid fa-circle-check"></i>
+            </div>
+            <span class="eyebrow">Order Placed Successfully</span>
+            <h2 style="font-family: var(--font-serif); font-size: 2rem; color: var(--c-noir); margin-bottom: 0.5rem;">Thank You, Esteemed Patron</h2>
+            <div id="order-success-details"></div>
+            <button class="btn btn-primary" onclick="MaisonApp.closeModal('order-success-modal')">Continue Shopping</button>
+        </div>
     </div>
 
-    <div class="product">
-        <img src="./img/1000465978.png" alt="Burgundy Kaftan">
-        <h3>White Premium </h3>
-        <p class="price"># 3</p>
-        <button onclick="addToCart()">Add to Cart</button>
-    </div>
-    <div class="product">
-        <img src="./img/1000470316.jpg" alt="White Kaftan">
-        <h3> Black Gold </h3>
-        <p class="price"># 4</p>
-        <button onclick="addToCart()">Add to Cart</button>
-    </div>
-    <div class="product">
-        <img src="./img/1000470318.jpg" alt="White Kaftan">
-        <h3> Navy Blue</h3>
-        <p class="price"># 5</p>
-        <button onclick="addToCart()">Add to Cart</button>
-    </div>
-    <div class="product">
-        <img src="./img/1000472797.jpg" alt="White Kaftan">
-        <h3> Carton Colour </h3>
-        <p class="price"># 6</p>
-        <button onclick="addToCart()">Add to Cart</button>
-    </div>
-    <div class="product">
-        <img src="./img/1000472799.jpg" alt="White Kaftan">
-        <h3> Light Brown </h3>
-        <p class="price"># 7</p>
-        <button onclick="addToCart()">Add to Cart</button>
-    </div>
-    <div class="product">
-        <img src="./img/1000472802.jpg" alt="White Kaftan">
-        <h3> Dark Blue</h3>
-        <p class="price"># 8</p>
-        <button onclick="addToCart()">Add to Cart</button>
-    </div>
-    <div class="product">
-        <img src="./img/1000472807.jpg" alt="White Kaftan">
-        <h3> Cream Colour </h3>
-        <p class="price"># 9</p>
-        <button onclick="addToCart()">Add to Cart</button>
-    </div>
-    <div class="product">
-        <img src="./img/1000479760.jpg" alt="White Kaftan">
-        <h3> Female Outfit </h3>
-        <p class="price"># 10</p>
-        <button onclick="addToCart()">Add to Cart</button>
-    </div>
-    <div class="product">
-        <img src="./img/1000479762.jpg" alt="White Kaftan">
-        <h3> Female Outfit </h3>
-        <p class="price"># 11</p>
-        <button onclick="addToCart()">Add to Cart</button>
-    </div>
-    <div class="product">
-        <img src="./img/1000479768.jpg" alt="White Kaftan">
-        <h3> Female Outfit </h3>
-        <p class="price"># 12</p>
-        <button onclick="addToCart()">Add to Cart</button>
-    </div>
-    <div class="product">
-        <img src="./img/1000479772.jpg" alt="White Kaftan">
-        <h3> Female Outfit </h3>
-        <p class="price"># 13</p>
-        <button onclick="addToCart()">Add to Cart</button>
-    </div>
-<div class="product">
-        <img src="./img/1000479774.jpg" alt="White Kaftan">
-        <h3> Female Outfit </h3>
-        <p class="price"># 14</p>
-        <button onclick="addToCart()">Add to Cart</button>
-    </div>
-    <div class="product">
-        <img src="./img/1000491599.png" alt="White Kaftan">
-        <h3> Female Outfit </h3>
-        <p class="price"># 15</p>
-        <button onclick="addToCart()">Add to Cart</button>
-    </div>
-    <div class="product">
-        <img src="./img/1000491617.png" alt="White Kaftan">
-        <h3> Female Outfit </h3>
-        <p class="price"># 16</p>
-        <button onclick="addToCart()">Add to Cart</button>
-    </div>
-    <div class="product">
-        <img src="./img/1000491618.png" alt="White Kaftan">
-        <h3> Female Outfit </h3>
-        <p class="price"># 17</p>
-        <button onclick="addToCart()">Add to Cart</button>
+    <!-- Designer Back Office Modal -->
+    <div id="designer-portal-modal" class="modal-backdrop designer-portal-modal">
+        <div class="modal-container">
+            <button class="modal-close-btn" onclick="DesignerPortal.closePortal()"><i class="fa-solid fa-xmark"></i></button>
+            <div class="portal-header">
+                <h2 style="font-family: var(--font-serif); font-size: 1.85rem;">TM Fashion House Designer Console</h2>
+                <button class="btn btn-outline-gold btn-sm" onclick="DesignerPortal.closePortal()">Close</button>
+            </div>
+            <div class="portal-nav-tabs">
+                <button class="portal-tab-btn active" data-tab="overview" onclick="DesignerPortal.switchTab('overview')">Overview</button>
+                <button class="portal-tab-btn" data-tab="inventory" onclick="DesignerPortal.switchTab('inventory')">Inventory</button>
+                <button class="portal-tab-btn" data-tab="orders" onclick="DesignerPortal.switchTab('orders')">Orders</button>
+                <button class="portal-tab-btn" data-tab="bespoke" onclick="DesignerPortal.switchTab('bespoke')">Bespoke</button>
+            </div>
+            <div id="portal-tab-content" class="portal-content-area"></div>
+        </div>
     </div>
 
-
-
-
-
-
-
-
-
-
-
-
-</section>
-
-<footer>
-    <p class="con">&copy; 2026 TM Fashion. All Rights Reserved.</p>
-</footer>
-
-<script>
-let cartCount = 0;
-
-function addToCart(){
-    cartCount++;
-    document.getElementById("cart-count").textContent = cartCount;
-    alert("Item added to cart!");
-}
-</script>
-
+    <script src="js/data.js"></script>
+    <script src="js/designer-portal.js"></script>
+    <script src="js/app.js"></script>
 </body>
 </html>
