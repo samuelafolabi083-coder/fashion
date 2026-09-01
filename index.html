@@ -3,599 +3,152 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TM FASHION HOUSE | Haute Couture, Bespoke Tailoring & Ready-to-Wear</title>
-    <meta name="description" content="TM Fashion House - Leading luxury fashion brand & bespoke couturier. Discover premium ready-to-wear wears, custom senator kaftans, and bespoke dresses.">
-    
-    <!-- Font Awesome Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    
-    <!-- Luxury Styling -->
-    <link rel="stylesheet" href="css/styles.css">
+    <title>TM Fashion House</title>
+
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+            font-family:Arial, sans-serif;
+        }
+
+        body{
+            background-image:url(./img/c43660ab-0248-4a86-8bbc-b82530665571.png);
+            background-size:cover;
+     background-position: center;
+        }
+
+        header{
+            background:black;
+            color:brown;
+            padding:20px 10%;
+            display:flex;
+            justify-content:space-between;
+            align-items:center;
+            height: 150px;
+        }
+
+        nav a{
+            color:white;
+            text-decoration:none;
+            margin-left:20px;
+        }
+
+        .hero{
+            height:90vh;
+            background-size:cover;
+            background-position:center;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            text-align:center;
+            color:white;
+        }
+
+        .hero-content h1{
+            font-size:50px;
+            margin-bottom:15px;
+        }
+
+        .hero-content p{
+            font-size:18px;
+            margin-bottom:20px;
+        }
+
+        .btn{
+            background:white;
+            color:black;
+            padding:12px 25px;
+            text-decoration:none;
+            border-radius:5px;
+            font-weight:bold;
+        }
+
+        .products{
+            padding:60px 10%;
+            text-align:center;
+        }
+
+        .products h2{
+            margin-bottom:30px;
+        }
+
+        .gallery{
+            display:grid;
+            grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+            gap:20px;
+        }
+
+        .gallery img{
+            width:100%;
+            border-radius:10px;
+        }
+
+        footer{
+            background-color: black;
+            color:white;
+            text-align:center;
+            padding:20px;
+            margin-top:40px;
+        }
+        .btn :hover{
+            background-color: black;
+            color: white;
+        }
+        .h1{
+            color: brown;
+        }
+        .para{
+            color: red;
+            font-size: 20px;
+            font-weight: bold;
+        }
+        .foots{
+            color: brown;
+        }
+    </style>
 </head>
 <body>
 
-    <!-- =========================================================================
-         ANNOUNCEMENT BAR
-         ========================================================================= -->
-    <aside class="announcement-bar">
-        <span>Lagos • Abuja • International Dispatch — Swift Delivery on All Ready-to-Wear Wares</span>
-        <div class="bar-links">
-            <a href="https://wa.me/2348000000000" target="_blank"><i class="fa-brands fa-whatsapp"></i> WhatsApp Concierge</a>
-            <a href="admin.html"><i class="fa-solid fa-ruler-combined"></i> Client Measurements</a>
-            <a href="admin.html"><i class="fa-solid fa-lock"></i> Admin Dashboard</a>
-        </div>
-    </aside>
+<header>
+    <h1>TM Fashion House</h1>
 
-    <!-- =========================================================================
-         MAIN SITE NAVIGATION
-         ========================================================================= -->
-    <header class="site-header">
-        <div class="container nav-container">
-            <button class="mobile-nav-toggle" onclick="document.querySelector('.nav-menu').classList.toggle('active')">
-                <i class="fa-solid fa-bars"></i>
-            </button>
-
-            <!-- Brand Logo -->
-            <a href="index.html" class="brand-logo">
-                <span class="brand-title">TM Fashion House</span>
-                <span class="brand-subtitle">Haute Couture & Ready-to-Wear</span>
-            </a>
-
-            <!-- Navigation Links -->
-            <nav>
-                <ul class="nav-menu">
-                    <li><a href="#catalog-section" class="nav-link">Ready-to-Wear</a></li>
-                    <li><a href="about.html" class="nav-link">The Designer</a></li>
-                    <li><a href="#process-section" class="nav-link">Craftsmanship</a></li>
-                    <li><a href="#bespoke-section" class="nav-link">Bespoke Tailoring</a></li>
-                    <li><a href="#lookbook-section" class="nav-link">Lookbook</a></li>
-                    <li><a href="contact.html" class="nav-link">Contact & Fitting</a></li>
-                    <li><a href="admin.html" class="nav-link" style="color: var(--c-gold-dark);"><i class="fa-solid fa-gauge-high"></i> Admin</a></li>
-                </ul>
-            </nav>
-
-            <!-- Header Actions -->
-            <div class="nav-actions">
-                <button class="action-btn" onclick="document.getElementById('search-input')?.focus(); MaisonApp.scrollToShop();" title="Search Wares">
-                    <i class="fa-solid fa-magnifying-glass"></i>
-                </button>
-                <button class="action-btn" onclick="MaisonApp.scrollToShop()" title="Wishlist">
-                    <i class="fa-regular fa-heart"></i>
-                    <span class="badge-count" id="wishlist-count-badge">0</span>
-                </button>
-                <button class="action-btn" onclick="MaisonApp.openCartDrawer()" title="Shopping Bag">
-                    <i class="fa-solid fa-bag-shopping"></i>
-                    <span class="badge-count" id="cart-count-badge">0</span>
-                </button>
-                <a href="admin.html" class="btn btn-outline btn-sm" style="display: inline-flex; margin-left: 0.5rem;">
-                    <i class="fa-solid fa-ruler-combined text-gold"></i> Admin Dashboard
-                </a>
-            </div>
-        </div>
-    </header>
-
-    <!-- =========================================================================
-         HERO SECTION
-         ========================================================================= -->
-    <section class="hero-section">
-        <div class="container">
-            <div class="hero-content">
-                <div class="hero-tag">
-                    <span class="dot"></span>
-                    <span>Royal Collection 2026</span>
-                </div>
-                <h1 class="hero-title">Where <span>Heritage Craft</span> Meets Royal Luxury</h1>
-                <p class="hero-description">
-                    Crafted by our Creative Director & Master Couturier. Explore ready-to-ship luxury kaftans, sharp executive senator wears, and bespoke haute couture dresses sculpted for royalty.
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+</header>
+<section class="hero">
+    <div class="hero-content">
+        <h1>Welcome to TM Fashion House</h1>
+        <p>Where Style Meets Elegance
+            <p class="word">Elevating your wardrobe,  one outfit at a time</p>
+            <p class="para">We specialize in designing and sewing elegant garments that reflect your unique style and personality.</p>
+            From custom-made native attire to contemporary fashion pieces
+            </p>
+            <p class="para">
+            👗 Turkish wear for ladies
+            👔 Stylish men`s wear
                 </p>
-                <div class="hero-cta-group">
-                    <a href="#catalog-section" class="btn btn-gold">
-                        <i class="fa-solid fa-bag-shopping"></i> Shop Ready-to-Wear
-                    </a>
-                    <button class="btn btn-outline" style="color: #fff; border-color: rgba(255,255,255,0.4);" onclick="MaisonApp.openBespokeModal()">
-                        <i class="fa-solid fa-scissors text-gold"></i> Commission Custom Fitting
-                    </button>
-                </div>
-
-                <div class="hero-badges">
-                    <div>
-                        <span class="hero-stat-num">1,200+</span>
-                        <span class="hero-stat-label">Bespoke Commissions</span>
-                    </div>
-                    <div>
-                        <span class="hero-stat-num">500+</span>
-                        <span class="hero-stat-label">Ready-to-Wear Wares</span>
-                    </div>
-                    <div>
-                        <span class="hero-stat-num">25+</span>
-                        <span class="hero-stat-label">Countries Shipped</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- =========================================================================
-         DESIGNER SPOTLIGHT: MEET THE CREATIVE DIRECTOR
-         ========================================================================= -->
-    <section id="designer-section" class="section">
-        <div class="container">
-            <div class="designer-grid">
-                <div class="designer-image-wrapper">
-                    <img src="./img/c43660ab-0248-4a86-8bbc-b82530665571.png" 
-                         alt="TM Fashion House Creative Director" 
-                         class="designer-img-main">
-                    <div class="designer-badge-floating">
-                        <span class="year">EST. 2020</span>
-                        <span class="label">Lagos • Abuja</span>
-                    </div>
-                </div>
-
-                <div class="designer-info">
-                    <span class="eyebrow">The Master Designer & Tailor</span>
-                    <span class="designer-role">Founder & Creative Director</span>
-                    <h2 class="designer-name">TM Fashion House</h2>
-
-                    <div class="designer-quote-box">
-                        "Every stitch is a statement of elegance, confidence, and bespoke craftsmanship. We believe a garment shouldn't merely dress the body—it should announce your arrival."
-                    </div>
-
-                    <p class="designer-bio">
-                        As the founder and master designer behind TM Fashion House, our creative director brings over a decade of mastery in bespoke tailoring, high-precision African sartorial kaftans, sharp executive suits, and bespoke women's couture gowns. Every ready-to-wear piece is hand-finished with signature embroidery, premium cashmere wools, and rich silks.
-                    </p>
-
-                    <ul class="accolades-list">
-                        <li class="accolades-item">
-                            <i class="fa-solid fa-award trophy-icon"></i>
-                            <span><strong>2025</strong> — African Haute Couture & Sartorial Excellence Award</span>
-                        </li>
-                        <li class="accolades-item">
-                            <i class="fa-solid fa-award trophy-icon"></i>
-                            <span><strong>2024</strong> — Top Bespoke Menswear & Womenswear Designer of the Year</span>
-                        </li>
-                        <li class="accolades-item">
-                            <i class="fa-solid fa-award trophy-icon"></i>
-                            <span><strong>2023</strong> — Lagos Fashion Week Featured Ready-to-Wear Showcase</span>
-                        </li>
-                    </ul>
-
-                    <div class="designer-signatures">
-                        <span class="signature-text">TM Couture</span>
-                        <button class="btn btn-outline" onclick="MaisonApp.openBespokeModal()">
-                            <i class="fa-solid fa-calendar-check"></i> Book Private Fitting
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- =========================================================================
-         CRAFTSMANSHIP TIMELINE ("FROM SKETCH TO SILHOUETTE")
-         ========================================================================= -->
-    <section id="process-section" class="section section-dark">
-        <div class="container">
-            <div class="section-header">
-                <span class="eyebrow" style="color: var(--c-gold);">The Atelier Standard</span>
-                <h2 class="section-title">From Concept to Finished Masterpiece</h2>
-                <p class="section-subtitle">
-                    Every garment in our ready-to-wear collection undergoes rigorous master tailoring, precision embroidery mapping, and hand-finishing before courier dispatch.
-                </p>
-            </div>
-
-            <div class="process-grid">
-                <div class="process-card">
-                    <div class="process-number">01</div>
-                    <h3 class="process-title">Bespoke Design</h3>
-                    <p class="process-desc">Crafted from our designer's custom lookbook, studying anatomic posture, drape balance, and royal color schemes.</p>
-                </div>
-                <div class="process-card">
-                    <div class="process-number">02</div>
-                    <h3 class="process-title">Precision Cutting</h3>
-                    <p class="process-desc">Cut from premium Swiss voiles, Italian virgin wools, polished cashmeres, and genuine African wax prints.</p>
-                </div>
-                <div class="process-card">
-                    <div class="process-number">03</div>
-                    <h3 class="process-title">Master Stitching</h3>
-                    <p class="process-desc">Signature geometric chest embroidery, seamless shoulder lines, and reinforced comfort inner lining.</p>
-                </div>
-                <div class="process-card">
-                    <div class="process-number">04</div>
-                    <h3 class="process-title">Valet Steam & Dispatch</h3>
-                    <p class="process-desc">Every piece is steam-pressed to crisp perfection and packaged in our signature luxury presentation box.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- =========================================================================
-         READY-TO-WEAR SHOPPING CATALOG
-         ========================================================================= -->
-    <section id="catalog-section" class="section">
-        <div class="container">
-            <div class="section-header">
-                <span class="eyebrow">Available for Immediate Dispatch</span>
-                <h2 class="section-title">Ready-to-Wear Wares</h2>
-                <p class="section-subtitle">
-                    Discover readily available men's luxury kaftans, executive senator suits, and elegant women's couture dresses ready to wear today.
-                </p>
-            </div>
-
-            <!-- Controls: Category Tabs, Search, Sorting -->
-            <div class="catalog-controls">
-                <div class="category-tabs">
-                    <button class="tab-btn active" data-category="all">All Wares</button>
-                    <button class="tab-btn" data-category="men">Men's Kaftans & Senators</button>
-                    <button class="tab-btn" data-category="women">Women's Gowns & Outfits</button>
-                </div>
-
-                <div class="filter-search-group">
-                    <div class="search-box">
-                        <i class="fa-solid fa-magnifying-glass search-icon"></i>
-                        <input type="text" id="search-input" class="search-input" placeholder="Search kaftans, silk, blue...">
-                    </div>
-                    <select id="sort-select" class="sort-select">
-                        <option value="featured">Featured Curations</option>
-                        <option value="price-low">Price: Low to High</option>
-                        <option value="price-high">Price: High to Low</option>
-                        <option value="rating">Highest Rated</option>
-                        <option value="newest">Newest Arrivals</option>
-                    </select>
-                </div>
-            </div>
-
-            <!-- Dynamic Product Grid -->
-            <div id="products-grid" class="products-grid">
-                <!-- Injected by js/app.js -->
-            </div>
-        </div>
-    </section>
-
-    <!-- =========================================================================
-         BESPOKE ATELIER CONSULTATION COMMISSIONS
-         ========================================================================= -->
-    <section id="bespoke-section" class="section bespoke-section">
-        <div class="container">
-            <div class="section-header">
-                <span class="eyebrow" style="color: var(--c-gold);">Private Haute Couture Services</span>
-                <h2 class="section-title">Bespoke Custom Tailoring</h2>
-                <p class="section-subtitle">
-                    Have our Master Designer custom-tailor an outfit to your exact measurements, fabric choices, and custom embroidery desires.
-                </p>
-            </div>
-
-            <div id="bespoke-services-grid" class="bespoke-grid">
-                <!-- Injected by js/app.js -->
-            </div>
-        </div>
-    </section>
-
-    <!-- =========================================================================
-         RUNWAY LOOKBOOK & EDITORIAL ARCHIVE
-         ========================================================================= -->
-    <section id="lookbook-section" class="section">
-        <div class="container">
-            <div class="section-header">
-                <span class="eyebrow">Editorial Lookbook</span>
-                <h2 class="section-title">The TM Runway Archive</h2>
-                <p class="section-subtitle">
-                    Browse our bespoke collections, red carpet appearances, and private client wedding attire.
-                </p>
-            </div>
-
-            <div id="lookbook-grid" class="lookbook-grid">
-                <!-- Injected by js/app.js -->
-            </div>
-        </div>
-    </section>
-
-    <!-- =========================================================================
-         PRESS & CRITICS REVIEWS
-         ========================================================================= -->
-    <section id="press-section" class="section" style="background-color: var(--c-cream-soft);">
-        <div class="container">
-            <div class="section-header">
-                <span class="eyebrow">Client & Critic Acclaim</span>
-                <h2 class="section-title">What Our Patrons Say</h2>
-                <p class="section-subtitle">Testimonials from prominent clients, wedding couples, and dignitaries.</p>
-            </div>
-
-            <div id="press-grid" class="press-grid">
-                <!-- Injected by js/app.js -->
-            </div>
-        </div>
-    </section>
-
-    <!-- =========================================================================
-         FOOTER
-         ========================================================================= -->
-    <footer class="site-footer">
-        <div class="container">
-            <div class="footer-grid">
-                <div class="footer-brand">
-                    <div class="footer-logo">TM Fashion House</div>
-                    <p class="footer-desc">
-                        A modern premier fashion house delivering exquisite ready-to-wear wears and mastercrafted bespoke tailoring for men and women worldwide.
-                    </p>
-                    <div style="font-size: 0.85rem; color: var(--c-gold);">
-                        <i class="fa-solid fa-location-dot"></i> Lagos & Abuja, Nigeria • International Doorstep Delivery
-                    </div>
-                </div>
-
-                <div>
-                    <h4 class="footer-col-title">Quick Pages</h4>
-                    <ul class="footer-links">
-                        <li><a href="shop.html">Ready-to-Wear Shop</a></li>
-                        <li><a href="about.html">About The Designer</a></li>
-                        <li><a href="contact.html">Contact & Fittings</a></li>
-                        <li><a href="#bespoke-section">Bespoke Tailoring</a></li>
-                        <li><a href="#lookbook-section">Runway Lookbook</a></li>
-                    </ul>
-                </div>
-
-                <div>
-                    <h4 class="footer-col-title">Custom Services</h4>
-                    <ul class="footer-links">
-                        <li><a href="javascript:void(0)" onclick="MaisonApp.openBespokeModal('bespoke-men-sartorial')">Senator Kaftans</a></li>
-                        <li><a href="javascript:void(0)" onclick="MaisonApp.openBespokeModal('bespoke-women-couture')">Women's Gowns</a></li>
-                        <li><a href="javascript:void(0)" onclick="MaisonApp.openBespokeModal('bespoke-wedding-group')">Wedding Entourage Packages</a></li>
-                        <li><a href="javascript:void(0)" onclick="MaisonApp.openSizeGuide()">Measurement Guide</a></li>
-                        <li><a href="javascript:void(0)" onclick="DesignerPortal.openPortal()">Designer & Owner Hub</a></li>
-                    </ul>
-                </div>
-
-                <div>
-                    <h4 class="footer-col-title">VIP Client Club</h4>
-                    <p style="font-size: 0.85rem; color: var(--c-text-light); line-height: 1.6;">
-                        Subscribe for private collection drops, new ready-to-wear alerts, and VIP fitting slots.
-                    </p>
-                    <form class="newsletter-form" onsubmit="event.preventDefault(); alert('Thank you for subscribing to TM Fashion House VIP Club.');">
-                        <input type="email" class="newsletter-input" placeholder="Enter your email..." required>
-                        <button type="submit" class="btn btn-gold btn-sm">Subscribe</button>
-                    </form>
-                </div>
-            </div>
-
-            <div class="footer-bottom">
-                <div>© 2026 TM Fashion House. All Rights Reserved. Creative Direction by Lead Designer.</div>
-                <div style="display: flex; gap: 1.5rem;">
-                    <span>Fast Doorstep Delivery</span>
-                    <span>100% Quality Fabric Guarantee</span>
-                </div>
-            </div>
-        </div>
-    </footer>
-
-    <!-- =========================================================================
-         CART SLIDE-OUT DRAWER
-         ========================================================================= -->
-    <div id="drawer-backdrop" class="drawer-backdrop" onclick="MaisonApp.closeCartDrawer()"></div>
-    
-    <aside id="cart-drawer" class="cart-drawer">
-        <div class="drawer-header">
-            <h3 class="drawer-title">Your Shopping Bag</h3>
-            <button class="drawer-close-btn" onclick="MaisonApp.closeCartDrawer()">
-                <i class="fa-solid fa-xmark"></i>
-            </button>
-        </div>
-
-        <div id="cart-items-container" class="drawer-body">
-            <!-- Injected by js/app.js -->
-        </div>
-
-        <div class="drawer-footer">
-            <div class="coupon-row">
-                <input type="text" id="coupon-input" class="coupon-input" placeholder="Privilege Code (e.g. TMVIP10)">
-                <button class="btn btn-outline btn-sm" onclick="MaisonApp.applyPromoCode()">Apply</button>
-            </div>
-
-            <div class="cart-summary-row">
-                <span>Subtotal</span>
-                <span id="cart-subtotal">₦0</span>
-            </div>
-            <div id="cart-discount-row" class="cart-summary-row" style="color: var(--c-gold); display: none;">
-                <span>VIP Discount</span>
-                <span>-₦0</span>
-            </div>
-            <div class="cart-summary-row">
-                <span>Courier Delivery</span>
-                <span style="color: var(--c-success); font-weight: 600;">Complimentary</span>
-            </div>
-
-            <div class="cart-summary-total">
-                <span>Estimated Total</span>
-                <span id="cart-total">₦0</span>
-            </div>
-
-            <button class="btn btn-primary" style="width: 100%; margin-top: 1.25rem;" onclick="MaisonApp.openCheckoutModal()">
-                Proceed to Checkout <i class="fa-solid fa-lock" style="font-size: 0.75rem;"></i>
-            </button>
-        </div>
-    </aside>
-
-    <!-- =========================================================================
-         QUICK VIEW MODAL
-         ========================================================================= -->
-    <div id="quick-view-modal" class="modal-backdrop">
-        <div class="modal-container">
-            <button class="modal-close-btn" onclick="MaisonApp.closeModal('quick-view-modal')">
-                <i class="fa-solid fa-xmark"></i>
-            </button>
-            <div id="quick-view-content">
-                <!-- Injected by js/app.js -->
-            </div>
-        </div>
+        <a href="./shop.html" class="btn">Shop Now</a>
     </div>
+</section>
 
-    <!-- =========================================================================
-         BESPOKE CONSULTATION WIZARD MODAL
-         ========================================================================= -->
-    <div id="bespoke-modal" class="modal-backdrop">
-        <div class="modal-container" style="max-width: 760px; padding: 3rem 2.5rem;">
-            <button class="modal-close-btn" onclick="MaisonApp.closeModal('bespoke-modal')">
-                <i class="fa-solid fa-xmark"></i>
-            </button>
-            <div id="bespoke-form-container">
-                <!-- Injected by js/app.js -->
-            </div>
-        </div>
+<section class="products">
+    <h2 class="h1">Featured Collections</h2>
+
+    <div class="gallery">
+        <img src="./img/1000466017.png" alt="Fashion Design">
+        <img src="./img/1000465981.png" alt="Fashion Design">
+        <img src="./img/1000466024.png" alt="Fashion Design">
     </div>
+</section>
 
-    <!-- =========================================================================
-         CHECKOUT & PAYMENT MODAL
-         ========================================================================= -->
-    <div id="checkout-modal" class="modal-backdrop">
-        <div class="modal-container" style="max-width: 820px; padding: 2.5rem;">
-            <button class="modal-close-btn" onclick="MaisonApp.closeModal('checkout-modal')">
-                <i class="fa-solid fa-xmark"></i>
-            </button>
-            
-            <div style="text-align: center; margin-bottom: 2rem;">
-                <span class="eyebrow">TM Fashion House Checkout</span>
-                <h2 style="font-family: var(--font-serif); font-size: 2rem; color: var(--c-noir);">Order Placement & Dispatch</h2>
-            </div>
+<footer>
+    <p class="foots">&copy; 2026 TM Fashion House. All Rights Reserved.</p>
+</footer>
 
-            <div style="display: grid; grid-template-columns: 1.15fr 1fr; gap: 2.5rem;">
-                <!-- Form Area -->
-                <form onsubmit="MaisonApp.submitOrder(event)">
-                    <h4 style="font-size: 0.85rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 1rem; color: var(--c-gold-dark);">
-                        1. Patron & Delivery Address
-                    </h4>
-                    <div class="form-grid" style="margin-bottom: 1.5rem;">
-                        <div class="form-group-full">
-                            <label class="form-label">Full Name</label>
-                            <input type="text" id="chk-name" class="form-control" placeholder="e.g. Chief Babatunde Adeleke" required>
-                        </div>
-                        <div class="form-group-full">
-                            <label class="form-label">Email Address</label>
-                            <input type="email" id="chk-email" class="form-control" placeholder="client@domain.com" required>
-                        </div>
-                        <div class="form-group-full">
-                            <label class="form-label">Delivery Address</label>
-                            <input type="text" id="chk-address" class="form-control" placeholder="Street Address, City, State" required>
-                        </div>
-                    </div>
-
-                    <h4 style="font-size: 0.85rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 1rem; color: var(--c-gold-dark);">
-                        2. Delivery Protocol
-                    </h4>
-                    <div style="display: flex; flex-direction: column; gap: 0.5rem; margin-bottom: 1.5rem; font-size: 0.85rem;">
-                        <label style="display: flex; align-items: center; gap: 0.5rem; padding: 0.75rem; border: 1px solid var(--c-border); border-radius: 2px;">
-                            <input type="radio" name="delivery_type" value="Express Doorstep Courier" checked>
-                            <span><strong>Express Doorstep Courier</strong> — Neatly boxed, tracked dispatch.</span>
-                        </label>
-                        <label style="display: flex; align-items: center; gap: 0.5rem; padding: 0.75rem; border: 1px solid var(--c-border); border-radius: 2px;">
-                            <input type="radio" name="delivery_type" value="Atelier Direct Pickup">
-                            <span><strong>Atelier Direct Pickup</strong> — Collect at TM Atelier suite.</span>
-                        </label>
-                    </div>
-
-                    <h4 style="font-size: 0.85rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 1rem; color: var(--c-gold-dark);">
-                        3. Payment Method
-                    </h4>
-                    <div style="display: flex; flex-direction: column; gap: 0.5rem; margin-bottom: 2rem; font-size: 0.85rem;">
-                        <label style="display: flex; align-items: center; gap: 0.5rem; padding: 0.75rem; border: 1px solid var(--c-border); border-radius: 2px; background: var(--c-cream);">
-                            <input type="radio" name="payment_method" value="bank_transfer" checked>
-                            <span><i class="fa-solid fa-building-columns"></i> <strong>Instant Bank Transfer / Online Debit Card</strong></span>
-                        </label>
-                        <label style="display: flex; align-items: center; gap: 0.5rem; padding: 0.75rem; border: 1px solid var(--c-border); border-radius: 2px;">
-                            <input type="radio" name="payment_method" value="cod">
-                            <span><i class="fa-solid fa-handshake"></i> Payment on Handover / Delivery</span>
-                        </label>
-                    </div>
-
-                    <button type="submit" class="btn btn-primary" style="width: 100%;">
-                        <i class="fa-solid fa-check"></i> Place & Confirm Order
-                    </button>
-                </form>
-
-                <!-- Order Summary Sidebar -->
-                <div style="background: var(--c-cream); padding: 1.75rem; border: 1px solid var(--c-border); border-radius: var(--radius-xs);">
-                    <h4 style="font-family: var(--font-serif); font-size: 1.25rem; margin-bottom: 1.25rem;">Order Summary</h4>
-                    <div id="checkout-summary-items">
-                        <!-- Injected by js/app.js -->
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- =========================================================================
-         ORDER CONFIRMATION RECEIPT MODAL
-         ========================================================================= -->
-    <div id="order-success-modal" class="modal-backdrop">
-        <div class="modal-container" style="max-width: 580px; padding: 3rem 2.5rem; text-align: center;">
-            <button class="modal-close-btn" onclick="MaisonApp.closeModal('order-success-modal')">
-                <i class="fa-solid fa-xmark"></i>
-            </button>
-            
-            <div style="width: 65px; height: 65px; border-radius: 50%; background: var(--c-gold-light); color: var(--c-gold-dark); display: flex; align-items: center; justify-content: center; font-size: 1.8rem; margin: 0 auto 1.5rem auto;">
-                <i class="fa-solid fa-circle-check"></i>
-            </div>
-
-            <span class="eyebrow">Order Placed Successfully</span>
-            <h2 style="font-family: var(--font-serif); font-size: 2.2rem; color: var(--c-noir); margin-bottom: 0.5rem;">Thank You, Esteemed Patron</h2>
-            <p style="font-size: 0.85rem; color: var(--c-text-muted);">Your order has entered the atelier dispatch sequence.</p>
-
-            <div id="order-success-details">
-                <!-- Injected by js/app.js -->
-            </div>
-
-            <button class="btn btn-primary" onclick="MaisonApp.closeModal('order-success-modal')">
-                Continue Shopping Collections
-            </button>
-        </div>
-    </div>
-
-    <!-- =========================================================================
-         DESIGNER & ATELIER OWNER MANAGEMENT MODAL (BACK-OFFICE)
-         ========================================================================= -->
-    <div id="designer-portal-modal" class="modal-backdrop designer-portal-modal">
-        <div class="modal-container">
-            <button class="modal-close-btn" onclick="DesignerPortal.closePortal()">
-                <i class="fa-solid fa-xmark"></i>
-            </button>
-
-            <div class="portal-header">
-                <div>
-                    <span class="eyebrow" style="color: var(--c-gold); margin-bottom: 0.25rem;">Atelier Back-Office</span>
-                    <h2 style="font-family: var(--font-serif); font-size: 1.85rem;">TM Fashion House Designer Console</h2>
-                </div>
-                <div style="display: flex; align-items: center; gap: 1rem;">
-                    <span style="font-size: 0.8rem; color: var(--c-gold-accent);">
-                        <i class="fa-solid fa-user-tie"></i> Master Couturier Logged In
-                    </span>
-                    <button class="btn btn-outline-gold btn-sm" onclick="DesignerPortal.closePortal()">Exit to Store</button>
-                </div>
-            </div>
-
-            <div class="portal-nav-tabs">
-                <button class="portal-tab-btn active" data-tab="overview" onclick="DesignerPortal.switchTab('overview')">
-                    <i class="fa-solid fa-chart-line"></i> Atelier Overview
-                </button>
-                <button class="portal-tab-btn" data-tab="inventory" onclick="DesignerPortal.switchTab('inventory')">
-                    <i class="fa-solid fa-shirt"></i> Ready-to-Wear Wares
-                </button>
-                <button class="portal-tab-btn" data-tab="orders" onclick="DesignerPortal.switchTab('orders')">
-                    <i class="fa-solid fa-box-open"></i> Production & Orders
-                </button>
-                <button class="portal-tab-btn" data-tab="bespoke" onclick="DesignerPortal.switchTab('bespoke')">
-                    <i class="fa-solid fa-gem"></i> Bespoke Commissions
-                </button>
-                <button class="portal-tab-btn" data-tab="profile" onclick="DesignerPortal.switchTab('profile')">
-                    <i class="fa-solid fa-feather-pointed"></i> Designer Story & Bio
-                </button>
-            </div>
-
-            <div id="portal-tab-content" class="portal-content-area">
-                <!-- Injected by js/designer-portal.js -->
-            </div>
-        </div>
-    </div>
-
-    <!-- Scripts -->
-    <script src="js/data.js"></script>
-    <script src="js/designer-portal.js"></script>
-    <script src="js/app.js"></script>
 </body>
 </html>
