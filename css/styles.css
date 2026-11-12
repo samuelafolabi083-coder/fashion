@@ -63,10 +63,11 @@ html {
 
 body {
   font-family: var(--font-sans);
-  background-color: var(--c-cream);
+  background-color:#d1fae5;
   color: var(--c-text-primary);
   line-height: 1.65;
   overflow-x: hidden;
+
 }
 
 img {
